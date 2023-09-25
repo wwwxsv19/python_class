@@ -1,0 +1,11 @@
+def f(n):
+    if n<1:
+        print(0, end="")
+    elif n==1:
+        print(1, end="")
+    else:
+        f(n//2)
+        print(n%2, end="")
+
+n = int(input())
+f(n)
