@@ -1,3 +1,6 @@
+'''
+# 내가 풀었던 코드
+
 n, m = map(int, input().split())
 num = cnt = 0
 
@@ -8,3 +11,16 @@ while(n >= m):
     cnt = cnt + num # 현재 얼마나 먹었는지 더함
 
 print(cnt)
+'''
+
+# 가독성이 더 좋아보이는 코드
+
+n, m = map(int, input().split())
+num = 0
+
+while(n >= m): 
+    n -= m
+    num += 1
+    n += 1
+    
+print(num)
