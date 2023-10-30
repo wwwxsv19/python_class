@@ -1,24 +1,24 @@
-num = []
+arr = []
 
 for i in range(19):
-    num.append(list(map(int, input().split())))
+    arr.append(list(map(int, input().split())))
 
-n = int(input())
+num = int(input())
 
-for i in range(n):
+for i in range(num):
     x, y = map(int, input().split())
     for j in range(19):
-        if num[j-1][y-1] == 1:
-            num[j-1][y-1] = 0
+        if arr[j-1][y-1]==0:
+            arr[j-1][y-1] = 1
         else:
-            num[j-1][y-1] = 1
-    for j in range(19):
-        if num[x-1][j-1] == 1:
-            num[x-1][j-1] = 0
+            arr[j-1][y-1] = 0
+        
+        if arr[x-1][j-1]==0:
+            arr[x-1][j-1] = 1
         else:
-            num[x-1][j-1] = 1
+            arr[x-1][j-1] = 0
 
 for i in range(19):
     for j in range(19):
-        print(num[i][j], end=' ')
+        print(arr[i][j], end=" ")
     print()

@@ -1,5 +1,4 @@
-#이상한 출석 부르기 1
-#map(int, input().split())
+# 이상한 출석 부르기 1 / map(int, input().split())
 
 n = int(input())
 num1 = list(map(int, input().split()))
@@ -24,4 +23,16 @@ for i in range(23, 0, -1):
 '''
 
 #python 알고리즘 : split() 활용해 리스트에 넣어서 계산
-#C 알고리즘 : 
+
+# 또다른 방법
+'''
+n = int(input())
+arr = list(map(int, input().split()))
+num = [0]*24
+
+for i in range(n):
+    num[arr[i]-1] = num[arr[i]-1] + 1
+
+for i in range(23):
+    print(num[i], end=" ")
+'''
