@@ -10,7 +10,7 @@ class FishCakeMaker:
             self.size = kwargs.get("size") # kwargs 딕셔너리 안에 size 라는 key 값의 value 가져오기
         if "flavor" in kwargs:
             self.flavor = kwargs.get("flavor")
-        if "price" in kwargs:
+        if "price" in kwargs:   
             self.price = kwargs.get("price")
 
     def show(self):
@@ -27,12 +27,12 @@ fish1.show()
 fish2.show()
 fish3.show()
 
-class MarketGoods(FishCakeMaker):
+class MarketGoods(FishCakeMaker): # 상속 받기
     def __init__(self, margin = 1000, **kwargs):
         super().__init__(**kwargs)
         self.mark_price = self.price + margin
     def show(self):
         print(self.flavor, self.mark_price)
 
-fish4 = MarketGoods(size=20, price=500)
+fish4 = MarketGoods(size = 20, price = 500)
 fish4.show()
