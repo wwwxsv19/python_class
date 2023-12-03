@@ -1,5 +1,5 @@
 class Stack:
-    def __init__(self, size = 5):
+    def __init__(self, size):
         self.size = size
         self.list = [None] * size
         self.top = -1
@@ -10,40 +10,25 @@ class Stack:
     def isFull(self):
         return self.top == self.size - 1
 
-    def push(self, e):
+    def push(self, item):
         if not self.isFull():
-            self.top = self.top + 1
-            self.list[self.top] = e
+            self.top += 1
+            self.list[self.top] = item
             print(self.list)
         else:
-            print("stack overflow")
+            print("Stack is overflow!")
 
     def pop(self):
         if not self.isEmpty():
-            print(self.list[self.top], end=" ")
+            temp = self.list[self.top]
             self.list[self.top] = None
-            self.top = self.top - 1
-            print(self.list)
+            self.top -= 1
+            return temp
         else:
-            print("stack underflow")
+            print("Stack is underflow!")
 
     def peek(self):
         if not self.isEmpty():
-            print(self.list[self.top])
+            return(self.list[self.top])
         else:
-            print("stack is underflow")
-
-s = Stack()
-
-s.push(1)
-s.push(1)
-s.push(1)
-s.push(1)
-s.push(1)
-s.push(1)
-s.pop()
-s.pop()
-s.pop()
-s.pop()
-s.pop()
-s.pop()
+            print("Stack is underflow!")
