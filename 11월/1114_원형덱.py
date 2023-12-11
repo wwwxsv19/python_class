@@ -43,7 +43,7 @@ class circleDeque:
             self.rear = (self.rear - 1 + self.size) % self.size
             return temp
 
-Deque = circleDeque()
+Deque = circleDeque(5)
 
 Deque.addFront(1)
 Deque.addFront(2)

@@ -33,7 +33,7 @@ class lineQueue:
         else:
             print("Queue is Empty!")
 
-q = lineQueue()
+q = lineQueue(5)
 
 q.enQueue(1)
 q.enQueue(2)
