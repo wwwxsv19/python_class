@@ -1,7 +1,7 @@
-class makeNewDeque:
-    def __init__(self, size = 5):
+class lineDeque:
+    def __init__(self, size):
         self.size = size
-        self.list = [None] * size
+        self.list = [None] * self.size
         self.front = -1
         self.rear = self.size
 
@@ -13,45 +13,49 @@ class makeNewDeque:
 
     def getFront(self):
         if not self.isEmpty():
-            print(self.list[self.front + 1])
+            return self.list[self.front + 1]
 
     def getRear(self):
         if not self.isEmpty():
-            print(self.list[self.rear])
+            return self.list[self.rear]
 
-    def addFront(self, e):
+    def addFront(self, item):
         if not self.isFull():
             self.front += 1
-            self.list[self.front] = e
-            print(self.list)
+            self.list[self.front] = item
         else:
             print("Deque is overflow!")
 
-    def addRear(self, e):
+    def addRear(self, item):
         if not self.isFull():
             self.rear -= 1
-            self.list[self.rear] = e
-            print(self.list)
+            self.list[self.rear] = item
         else:
             print("Deque is overflow!")
 
     def deleteFront(self):
         if not self.isEmpty():
+            temp = self.list[self.front]
             self.list[self.front] = None
             self.front -= 1
-            print(self.list)
+            return temp
         else:
             print("Deque is underflow!")
 
     def deleteRear(self):
         if not self.isEmpty():
+            temp = self.list[self.rear]
             self.list[self.rear] = None
             self.rear += 1
-            print(self.list)
+            return temp
         else:
             print("Deque is underflow!")
 
-Deque = makeNewDeque()
+    def printDeque(self):
+        print(self.list)
+
+
+Deque = lineDeque(5)
 
 Deque.addFront(1)
 Deque.addFront(2)

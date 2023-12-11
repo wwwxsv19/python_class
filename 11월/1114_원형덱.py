@@ -1,7 +1,7 @@
-class makeNewDeque:
-    def __init__(self, size = 5):
+class circleDeque:
+    def __init__(self, size):
         self.size = size
-        self.list = [None] * size
+        self.list = [None] * self.size
         self.front = 0
         self.rear = 0
 
@@ -13,37 +13,37 @@ class makeNewDeque:
 
     def getFront(self):
         if not self.isEmpty():
-            print(self.list[(self.front + 1) % self.size])
+            return self.list[(self.front + 1) % self.size]
 
     def getRear(self):
         if not self.isEmpty():
-            print(self.list[self.rear])
+            return self.list[self.rear]
 
-    def addFront(self, e):
+    def addFront(self, item):
         if not self.isFull():
-            self.list[self.front] = e
+            self.list[self.front] = item
             self.front = (self.front - 1 + self.size) % self.size
-            print(self.list)
 
-    def addRear(self, e):
+    def addRear(self, item):
         if not self.isFull():
             self.rear = (self.rear + 1) % self.size
-            self.list[self.rear] = e
-            print(self.list)
+            self.list[self.rear] = item
 
     def deleteFront(self):
         if not self.isEmpty():
             self.front = (self.front + 1) % self.size
+            temp = self.list[self.front]
             self.list[self.front] = None
-            print(self.list)
+            return temp
 
     def deleteRear(self):
         if not self.isEmpty():
+            temp = self.list[self.rear]
             self.list[self.rear] = None
             self.rear = (self.rear - 1 + self.size) % self.size
-            print(self.list)
+            return temp
 
-Deque = makeNewDeque()
+Deque = circleDeque()
 
 Deque.addFront(1)
 Deque.addFront(2)

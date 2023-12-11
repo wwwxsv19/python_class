@@ -1,7 +1,7 @@
 class Stack:
     def __init__(self, size):
         self.size = size
-        self.list = [None] * size
+        self.list = [None] * self.size
         self.top = -1
 
     def isEmpty(self):
@@ -14,7 +14,6 @@ class Stack:
         if not self.isFull():
             self.top += 1
             self.list[self.top] = item
-            print(self.list)
         else:
             print("Stack is overflow!")
 
