@@ -1,7 +1,7 @@
-class CircleQueue:
-    def __init__(self, size = 5):
+class circleQueue:
+    def __init__(self, size):
         self.size = size
-        self.list = [None] * size
+        self.list = [None] * self.size
         self.front = 0
         self.rear = 0
 
@@ -11,13 +11,12 @@ class CircleQueue:
     def isFull(self):
         return (self.rear + 1) % self.size == self.front
 
-    def enQueue(self, e):
+    def enQueue(self, item):
         if not self.isFull():
             self.rear = (self.rear + 1) % self.size
-            self.list[self.rear] = e
-            print(self.list)
+            self.list[self.rear] = item
         else:
-            print("Stack is overflow!")
+            print("Queue is overflow!")
 
     def deQueue(self):
         if not self.isEmpty():
@@ -26,15 +25,15 @@ class CircleQueue:
             self.list[self.front] = None
             return temp
         else:
-            print("Stack is underflow!")
+            print("Queue is underflow!")
 
     def peek(self):
         if not self.isEmpty():
             return self.list[(self.front + 1) % self.size]
         else:
-            print("Stack is Empty!")
+            print("Queue is Empty!")
 
-q = CircleQueue()
+q = circleQueue(5)
 
 q.enQueue(1)
 q.enQueue(2)
