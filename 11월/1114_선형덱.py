@@ -1,5 +1,5 @@
 class makeNewDeque:
-    def __init__(self, size = 5):
+    def __init__(self, size):
         self.size = size
         self.list = [None] * size
         self.front = -1
@@ -51,7 +51,7 @@ class makeNewDeque:
         else:
             print("Deque is underflow!")
 
-Deque = makeNewDeque()
+Deque = makeNewDeque(5)
 
 Deque.addFront(1)
 Deque.addFront(2)
