@@ -14,20 +14,28 @@ class circleDeque:
     def getFront(self):
         if not self.isEmpty():
             return self.list[(self.front + 1) % self.size]
+        else:
+            print("Deque is underflow!")
 
     def getRear(self):
         if not self.isEmpty():
             return self.list[self.rear]
+        else:
+            print("Deque is underflow!")
 
     def addFront(self, item):
         if not self.isFull():
             self.list[self.front] = item
             self.front = (self.front - 1 + self.size) % self.size
+        else:
+            print("Deque is overflow!")
 
     def addRear(self, item):
         if not self.isFull():
             self.rear = (self.rear + 1) % self.size
             self.list[self.rear] = item
+        else:
+            print("Deque is overflow!")
 
     def deleteFront(self):
         if not self.isEmpty():
@@ -35,6 +43,8 @@ class circleDeque:
             temp = self.list[self.front]
             self.list[self.front] = None
             return temp
+        else:
+            print("Deque is underflow!")
 
     def deleteRear(self):
         if not self.isEmpty():
@@ -42,6 +52,8 @@ class circleDeque:
             self.list[self.rear] = None
             self.rear = (self.rear - 1 + self.size) % self.size
             return temp
+        else:
+            print("Deque is underflow!")
 
 Deque = circleDeque(5)
 

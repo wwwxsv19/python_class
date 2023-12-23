@@ -14,10 +14,14 @@ class lineDeque:
     def getFront(self):
         if not self.isEmpty():
             return self.list[self.front + 1]
+        else:
+            print("Deque is underflow!")
 
     def getRear(self):
         if not self.isEmpty():
             return self.list[self.rear]
+        else:
+            print("Deque is underflow!")
 
     def addFront(self, item):
         if not self.isFull():
